@@ -12,3 +12,6 @@ provider:
     lambda: true
   iamRoleStatements:
     - ${file(./resources/lambda-policies.yml):lambdaPolicyXRay}
+
+resources:
+  - ${file(./resources/api-gateway-errors.yml)}
