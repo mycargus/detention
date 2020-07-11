@@ -1,3 +1,5 @@
+# https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+
 service: detention
 
 frameworkVersion: "=1.74.1"
