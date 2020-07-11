@@ -7,3 +7,8 @@ provider:
   runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
+  tracing:
+    apiGateway: true
+    lambda: true
+  iamRoleStatements:
+    - ${file(./resources/lambda-policies.yml):lambdaPolicyXRay}
