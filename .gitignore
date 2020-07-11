@@ -1,0 +1,7 @@
+# package directories
+**/*.zip
+coverage/
+node_modules/
+
+# Serverless directories
+.serverless/

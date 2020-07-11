@@ -1,0 +1,25 @@
+{
+  "name": "detention",
+  "version": "1.0.0",
+  "description": "Send flaky tests to detention. Let them out once they're reliable again.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mycargus/detention.git"
+  },
+  "author": "Mikey Hargiss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mycargus/detention/issues"
+  },
+  "homepage": "https://github.com/mycargus/detention#readme",
+  "engines": {
+    "node": ">=14.0",
+    "npm": ">=6.0"
+  },
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "devDependencies": {
+    "serverless": "^1.74.1"
+  }
+}
