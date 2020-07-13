@@ -1,4 +1,14 @@
 module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:jest/style',
+    'plugin:jest/recommended',
+    'eslint-config-prettier',
+  ],
+  env: {
+    browser: false,
+    node: true,
+  },
   parserOptions: {
     ecmaVersion: 2019,
     sourceType: 'module',
@@ -6,9 +16,5 @@ module.exports = {
       jsx: true,
     },
   },
-  env: {
-    browser: false,
-    node: true,
-  },
-  extends: ['eslint-config-prettier'],
+  plugins: ['jest'],
 }
