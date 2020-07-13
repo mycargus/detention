@@ -3,4 +3,5 @@
 set -e
 
 npm ci
-npm run test
+npm run validate
+npm test
