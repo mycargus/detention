@@ -13,4 +13,4 @@ jobs:
       cache: bundler
       env: TARGET=clients/ruby/rspec
 
-script: if .travis/build.sh $TRAVIS_COMMIT_RANGE $TARGET; then echo "Building $TARGET ...\n" && cd $TARGET && scripts/ci.sh; else echo "No changes detected in $TARGET; skipping build.\n"; fi
+script: if .travis/build.sh $TRAVIS_COMMIT_RANGE $TARGET; then echo "Building '$TARGET' ..." && cd $TARGET && scripts/ci.sh; else echo "No changes detected in '$TARGET'; skipping build."; fi
