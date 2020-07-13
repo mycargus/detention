@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mycargus/detention.svg?branch=master)](https://travis-ci.org/mycargus/detention)
+
 # Detention
 
 `Detention` aims to automatically diagnose and disable flaky tests. It also
