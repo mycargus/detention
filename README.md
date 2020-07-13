@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/mycargus/detention.svg?branch=master)](https://travis-ci.org/mycargus/detention)
+[![MIT License](https://img.shields.io/github/license/mycargus/detention)](https://shields.io/)
+[![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
 
 # Detention
 
@@ -70,14 +72,26 @@ work reliably again.
 
 ```
 
-## Setup and Installation
+## Setup
 
-TODO
+This is a monorepo for the Detention service and its client libraries. See
+`service/README.md` and `clients/README.md` for instructions.
 
 ## Pro Tip
 
 This project works especially well when combined with the [flakey_spec_catcher]
 gem, which helps prevent flakey specs from sneaking into your test suites!
+
+## Plans
+
+- [x] Start the project
+- [ ] Everything else
+- [ ] Build a Ruby RSpec client gem
+- [ ] Build a Node.js Jest package
+- [ ] Build a Node.js Mocha package (or a single Nodejs package to which we add support for more test frameworks? )
+- [ ] Add Jira tickets integration
+- [ ] Add Github issues/PR integration
+- [ ] Add Trello boards integration
 
 ## Credit
 
