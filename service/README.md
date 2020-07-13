@@ -16,6 +16,14 @@ npm ci
 Be sure to use `npm ci`! It's faster than `npm install` and actually uses the
 `package-lock.json`.
 
+## Test
+
+After completing the above setup steps:
+
+```bash
+npm test
+```
+
 ## Provision / Deploy
 
 Deploy to the `dev` (non-production) stage:
