@@ -22,7 +22,7 @@
     "format:check": "npm run prettier -- --list-different",
     "lint": "jest --config 'jest.lint.js'",
     "lint:fix": "npm run eslint -- --fix",
-    "prettier": "prettier --ignore-path ../.gitignore \"../**/*.+(js|json|css|html|md)\"",
+    "prettier": "prettier --ignore-path ../.gitignore \"../**/*.+(js|json|md)\"",
     "test": "is-ci \"test:ci\" \"test:watch\"",
     "test:ci": "jest",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
@@ -39,9 +39,11 @@
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jest": "^23.18.0",
+    "husky": "^4.2.5",
     "is-ci-cli": "^2.1.2",
     "jest": "^26.1.0",
     "jest-runner-eslint": "^0.10.0",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "serverless": "^1.74.1"
   }
