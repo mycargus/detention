@@ -1,5 +1,8 @@
 language: generic
 
+notifications:
+  email: false
+
 jobs:
   include:
     - name: Detention Service
