@@ -1,0 +1,16 @@
+language: generic
+
+jobs:
+  include:
+    - name: Detention Service
+      language: node_js
+      node_js: 12
+      cache: npm
+      env: TARGET=detention
+    - name: Client - Ruby RSpec
+      language: ruby
+      rvm: 2.6
+      cache: bundler
+      env: TARGET=clients/ruby/rspec
+
+script: if .travis/build.sh $TRAVIS_COMMIT_RANGE $TARGET; then echo "Building $TARGET ...\n" && cd $TARGET && scripts/ci.sh; else echo "No changes detected in $TARGET; skipping build.\n"; fi
