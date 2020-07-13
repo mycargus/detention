@@ -17,9 +17,13 @@
     "npm": ">=6.0"
   },
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "format": "prettier --ignore-path ../.gitignore --write \"../**/*.+(js|json|css|html|md)\"",
+    "test": "jest"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
     "serverless": "^1.74.1"
   }
 }
