@@ -3,6 +3,7 @@
 const path = require('path')
 
 module.exports = {
+  displayName: 'test',
   moduleDirectories: [
     'node_modules',
     path.join(__dirname, 'src'),
@@ -10,4 +11,5 @@ module.exports = {
   ],
   testEnvironment: 'jest-environment-node',
   verbose: true,
+  projects: ['./jest.config.js', './jest.lint.js'],
 }
