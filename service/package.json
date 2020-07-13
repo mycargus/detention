@@ -18,10 +18,14 @@
   },
   "scripts": {
     "format": "prettier --ignore-path ../.gitignore --write \"../**/*.+(js|json|css|html|md)\"",
-    "test": "jest"
+    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test:ci": "jest",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.4",
+    "is-ci-cli": "^2.1.2",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "serverless": "^1.74.1"
