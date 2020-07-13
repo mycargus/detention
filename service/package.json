@@ -17,14 +17,20 @@
     "npm": ">=6.0"
   },
   "scripts": {
-    "format": "prettier --ignore-path ../.gitignore --write \"../**/*.+(js|json|css|html|md)\"",
+    "format": "npm run prettier -- --write",
+    "format:check": "npm run prettier -- --list-different",
+    "lint": "eslint --ignore-path ../.gitignore .",
+    "prettier": "prettier --ignore-path ../.gitignore \"../**/*.+(js|json|css|html|md)\"",
     "test": "is-ci \"test:ci\" \"test:watch\"",
     "test:ci": "jest",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "validate": "npm run format:check && npm run lint"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.4",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
     "is-ci-cli": "^2.1.2",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
