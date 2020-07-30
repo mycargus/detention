@@ -9,6 +9,9 @@ module.exports = {
     browser: false,
     node: true,
   },
+  globals: {
+    assert: 'readonly',
+  },
   parserOptions: {
     ecmaVersion: 2019,
     sourceType: 'module',
@@ -17,4 +20,12 @@ module.exports = {
     },
   },
   plugins: ['jest'],
+  rules: {
+    'jest/expect-expect': [
+      'error',
+      {
+        assertFunctionNames: ['assert', 'expect', 'request.*.expect'],
+      },
+    ],
+  },
 }
