@@ -2,7 +2,7 @@
 
 service: detention
 
-frameworkVersion: "=1.74.1"
+frameworkVersion: '=1.77.1'
 
 provider:
   name: aws
