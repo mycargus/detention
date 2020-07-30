@@ -4,69 +4,61 @@
 
 # Detention
 
-`Detention` aims to automatically diagnose and disable flaky tests. It also
-creates issues or tickets (github, Jira, Trello, etc) for those flaky tests.
-When the issue or ticket is closed, the test is enabled again.
+`Detention` aims to automatically diagnose, disable, and help you maintain
+non-deterministic ("flaky") tests.
 
-This project defines code-as-infrastructure for a serverless HTTP service, and
-provides runtime client libraries for test suites. Clone, deploy, install client
-libraries in your test suites, and you're all set.
+It also creates issues or tickets (github, Jira, Trello, etc) for those flaky
+tests. When the issue or ticket is closed, the test is enabled again.
+
+This project defines infrastructure-as-code for a serverless HTTP API service,
+and provides runtime client libraries for test suites. Clone and deploy the
+service, install client libraries in your test suites, and you're all set.
 
 ## The Problem
 
-Why do we code tests? I code tests so that I can make changes to my code with
-confidence that what I built actually works as expected and I haven't
-accidentally broken something. If I can rely on my coded tests then I can
-confidently ship my code.
+> "A test is non-deterministic when it passes sometimes and fails sometimes,
+> without any noticeable change in the code, tests, or environment. Such tests
+> fail, then you re-run them and they pass. Test failures for such tests are
+> seemingly random." - Martin Fowler, Eradicating Non-Determinism in Tests
 
-Undeterministic tests, AKA flaky tests, yield different results for unknown
-reasons. Flaky tests are unreliable tests. Unreliable tests provide zero value
-and negatively impact products and engineers. If I cannot rely on my coded tests
-then I cannot confidently ship my code.
+Fowler goes on to explain why non-deterministic tests are a problem, why you
+should quarantine them, and how to ensure test reliability. We highly recommend
+reading [the article].
 
-So we set out to fix those flaky tests as quickly as possible. Managing flaky
-tests can become a tedious chore, however, especially as test suites grow large.
-Some businesses even have full-time engineers dedicated to culling flaky tests
-from test suites: constantly monitoring builds, analyzing test results,
-committing code to skip flaky tests, and creating issues or tickets. Meanwhile
-other engineers repeatedly retrigger the builds, crossing their fingers for
-green results.
-
-Sound familiar?
-
-If you don't trust your tests, why run them?
+Quarantining tests can become a tedious and time-consuming job, especially as
+a test suite grows large. We propose an easier way to do it.
 
 ## A Solution
 
 Let's automatically diagnose flaky tests and put them in detention till they
-work reliably again.
+work reliably again. Here's how it works:
 
 ```text
 
 /--------------------------------------------\
-| A test fails and passes on the same build. |
-|                    ಠ_ಠ                     |
-\--------------------------------------------/
-                      ||
-                      ||
-                      \/
-/--------------------------------------------\
-| The build still passes. The test is put in |
-| detention.  ヾ(＾∇＾)                       |
-\--------------------------------------------/
-                      ||
-                      ||
-                      \/
-/--------------------------------------------\
-| A Jira ticket, github issue, etc is        |
-| created for the flaky test.                |
-\--------------------------------------------/
-                      ||
-                      ||
-                      \/
-/--------------------------------------------\
-| When the ticket or issue is closed, the    |
-| flaky test is released from detention. It  |
+| A test fails and passes on the same build. |  <---\
+|                    ಠ_ಠ                     |      |
+\--------------------------------------------/      |
+                      ||                            |
+                      ||                            |
+                      \/                            |
+/--------------------------------------------\      |
+| The build still passes. The test is put in |      |
+| detention. The team is notified. ヾ(＾∇＾)  |      |
+\--------------------------------------------/      |
+                      ||                            |
+                      ||                            |
+                      \/                            |
+/--------------------------------------------\      |
+| A Jira ticket, github issue, etc is        |      |
+| created for the flaky test.                |      |
+\--------------------------------------------/      |
+                      ||                            |
+                      ||                            |
+                      \/                            |
+/--------------------------------------------\      |
+| When the ticket or issue is closed, the    |      |
+| flaky test is released from detention. It  |  ----/
 | will run in builds again.  \o/             |
 \--------------------------------------------/
 
@@ -75,7 +67,7 @@ work reliably again.
 ## Setup
 
 This is a monorepo for the Detention service and its client libraries. See
-`service/README.md` and `clients/README.md` for instructions.
+`service/README.md` and `clients/README.md` for setup instructions.
 
 ## Pro Tip
 
@@ -85,17 +77,20 @@ gem, which helps prevent flakey specs from sneaking into your test suites!
 ## Plans
 
 - [x] Start the project
-- [ ] Everything else
+- [ ] Everything else ...
 - [ ] Build a Ruby RSpec client gem
-- [ ] Build a Node.js Jest package
-- [ ] Build a Node.js Mocha package (or a single Nodejs package to which we add support for more test frameworks? )
+- [ ] Build a Node.js Jest client package
+- [ ] Build a Node.js Mocha client package (or a single Nodejs package to which we add support for more test frameworks? )
 - [ ] Add Jira tickets integration
 - [ ] Add Github issues/PR integration
 - [ ] Add Trello boards integration
+- [ ] Automatically send a Slack or email or whatever notification when the number of flaky tests reaches a configurable threshold
+- [ ] Periodically send a report about the flaky tests, their lifetime, number of resolved, number of new, etc
 
 ## Credit
 
 This project was inspired by the [quarantine] gem.
 
+[the article]: https://martinfowler.com/articles/nonDeterminism.html
 [flakey_spec_catcher]: https://rubygems.org/gems/flakey_spec_catcher
 [quarantine]: https://github.com/flexport/quarantine
