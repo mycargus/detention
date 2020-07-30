@@ -12,4 +12,5 @@ module.exports = {
   testEnvironment: 'jest-environment-node',
   verbose: true,
   projects: ['./jest.config.js', './jest.lint.js'],
+  setupFilesAfterEnv: ['./node_modules/riteway-jest/src/riteway-jest.js'],
 }
