@@ -1,10 +1,11 @@
-[![Build Status](https://travis-ci.org/mycargus/detention.svg?branch=master)](https://travis-ci.org/mycargus/detention)
-[![MIT License](https://img.shields.io/github/license/mycargus/detention)](https://shields.io/)
+![Build Status](https://img.shields.io/travis/mycargus/quarantined/master?color=green&logo=travis&style=for-the-badge)
+![License](https://img.shields.io/github/license/mycargus/quarantined?color=blue&style=for-the-badge)
+
 [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
 
-# Detention
+# Quarantined
 
-`Detention` aims to automatically diagnose, disable, and help you maintain
+`Quarantined` aims to automatically diagnose, disable, and help you maintain
 non-deterministic ("flaky") tests.
 
 It also creates issues or tickets (github, Jira, Trello, etc) for those flaky
@@ -30,8 +31,8 @@ a test suite grows large. We propose an easier way to do it.
 
 ## A Solution
 
-Let's automatically diagnose flaky tests and put them in detention till they
-work reliably again. Here's how it works:
+Let's automatically diagnose flaky tests and quarantine them until they work
+reliably again. Here's how it works:
 
 ```text
 
@@ -43,8 +44,8 @@ work reliably again. Here's how it works:
                       ||                            |
                       \/                            |
 /--------------------------------------------\      |
-| The build still passes. The test is put in |      |
-| detention. The team is notified. ヾ(＾∇＾)  |      |
+| The build still passes. The test is        |      |
+| quarantined. The team is notified. ヾ(＾∇＾)|      |
 \--------------------------------------------/      |
                       ||                            |
                       ||                            |
@@ -58,15 +59,15 @@ work reliably again. Here's how it works:
                       \/                            |
 /--------------------------------------------\      |
 | When the ticket or issue is closed, the    |      |
-| flaky test is released from detention. It  |  ----/
-| will run in builds again.  \o/             |
+| test is released from quarantine. It will  |  ----/
+| run in builds again.  \o/                  |
 \--------------------------------------------/
 
 ```
 
 ## Setup
 
-This is a monorepo for the Detention service and its client libraries. See
+This is a monorepo for the Quarantined service and its client libraries. See
 `service/README.md` and `clients/README.md` for setup instructions.
 
 ## Pro Tip

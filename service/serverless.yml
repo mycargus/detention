@@ -1,6 +1,6 @@
 # https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml/
 
-service: detention
+service: quarantined
 
 frameworkVersion: '=1.77.1'
 

@@ -1,3 +1,3 @@
-# Detention Client Libraries
+# Quarantined Client Libraries
 
 TODO
