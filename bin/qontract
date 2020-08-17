@@ -6,9 +6,12 @@
 
 set -e
 
+version="0.15.0"
+
 function install-qontract {
-  echo -e "\nInstalling qontract ..."
-  curl -LOS https://github.com/qontract/qontract/releases/download/0.15.0/qontract.jar
+  echo -e "\nInstalling qontract ...\n"
+  curl -LOS https://github.com/qontract/qontract/releases/download/${version}/qontract.jar
+  echo -e "\nDone!\n"
 }
 
 [ -f "qontract.jar" ] || install-qontract
