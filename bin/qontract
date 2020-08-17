@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Invoke qontract. Run 'bin/qontract' to learn more.
+#
+# Resources: https://qontract.run/
+
+set -e
+
+function install-qontract {
+  echo -e "\nInstalling qontract ..."
+  curl -LOS https://github.com/qontract/qontract/releases/download/0.15.0/qontract.jar
+}
+
+[ -f "qontract.jar" ] || install-qontract
+
+java -jar qontract.jar "${@}"

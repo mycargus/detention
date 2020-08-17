@@ -1,0 +1,13 @@
+{
+  "http-request": {
+    "method": "POST",
+    "path": "/test",
+    "body": {
+      "id": 1
+    }
+  },
+
+  "http-response": {
+    "status": 201
+  }
+}
