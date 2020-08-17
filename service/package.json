@@ -1,17 +1,17 @@
 {
-  "name": "detention",
+  "name": "quarantined",
   "version": "1.0.0",
-  "description": "Send flaky tests to detention. Let them out once they're reliable again.",
+  "description": "Quarantine non-deterministic tests. Release them once they're reliable again.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mycargus/detention.git"
+    "url": "git+https://github.com/mycargus/quarantined.git"
   },
   "author": "Mikey Hargiss",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mycargus/detention/issues"
+    "url": "https://github.com/mycargus/quarantined/issues"
   },
-  "homepage": "https://github.com/mycargus/detention#readme",
+  "homepage": "https://github.com/mycargus/quarantined#readme",
   "engines": {
     "node": ">=12.0",
     "npm": ">=6.0"

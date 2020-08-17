@@ -5,12 +5,12 @@ notifications:
 
 jobs:
   include:
-    - name: Detention Service
+    - name: Quarantined Service
       language: node_js
       node_js: 12
       cache: npm
       env: TARGET=service
-    - name: Client - Ruby RSpec
+    - name: Quarantined Client - Ruby RSpec
       language: ruby
       rvm: 2.6
       cache: bundler

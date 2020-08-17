@@ -1,4 +1,4 @@
-Feature: Detention API
+Feature: Quarantined API
 
 Scenario: Create a new test record
   Given type Test

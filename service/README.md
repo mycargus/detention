@@ -1,7 +1,7 @@
-# The Detention Service
+# Quarantined API
 
 We use the open source [Serverless Framework] to provision and deploy the
-`Detention` service to AWS.
+`Quarantined` API service to AWS.
 
 ## Setup
 
