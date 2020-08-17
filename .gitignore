@@ -5,3 +5,5 @@ node_modules/
 
 # Serverless directories
 .serverless/
+
+**/*.jar

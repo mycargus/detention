@@ -1,0 +1,8 @@
+Feature: Detention API
+
+Scenario: Create a new test record
+  Given type Test
+    | id | (number) |
+  When POST /test
+  And request-body (Test)
+  Then status 201
